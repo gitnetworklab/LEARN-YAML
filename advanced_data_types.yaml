@@ -1,0 +1,58 @@
+---
+# Sparse sequence where some values are Null
+seq:
+  - how
+  - who
+  - when
+  -
+  - where
+
+
+# Nested sequence
+fruits:
+  - Mango
+    - RED
+    - BLUE
+    - GREEN
+  - Grapes
+    - RED
+    - BLUE
+    - GREEN
+
+
+# Advanced data types
+students: !!seq # Defines a sequence
+pair: !!map # Key-value pairs are called maps
+
+# Define a pairs
+key1: !!pairs [job: Student, job: Teacher]
+
+# Set will allow to have unique values
+key2:
+ ? Kunal
+ ? Nitin
+ ? Rahul
+
+
+# Dictionary
+key3: !!omap
+  - Kunal:
+    - name: Kunal Shah
+    - age: 35
+  - Rahul:
+    - name: Rahul Mane
+    - age: 40
+
+
+# Reusing some properties using anchors
+likings: &likes
+  fav_fruit: Mango
+  dislikes: Grapes
+
+Person1:
+  name: Kunal
+  <<: *likes # calling anchor
+  dislikes: Banana # Overwrites this value
+
+
+...

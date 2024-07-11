@@ -1,0 +1,42 @@
+--- # Start of the document
+# KEY-VALUE pairs in YAML
+name: Satish Bodhgire
+age: 35
+
+
+# Simple list
+- apple
+- banana
+- grapes
+
+
+# Lists in YAML
+banks:
+  - HDFC
+  - ICICI
+  - SBI
+
+
+# Multiline message in YAML
+message: |
+This is a text
+not matching
+
+
+# Multiline message in single line
+message: >
+This is a text
+not matching
+
+
+# Defining a data types
+age: !!int 45
+certified: !!bool No
+name: !!str John
+marks: !!float 65.5
+number: .inf # Define something which says "indefinite"
+none: .nan # Define something which says "Not a number"
+surname: !!null null # Define something which is "Null", symbol "~" can also be used
+time: !!timestamp # Define a timestamp
+
+... # End of the document
